@@ -4,7 +4,9 @@ import {
   Get,
   HttpCode,
   HttpStatus,
+  ParseIntPipe,
   Post,
+  Query,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
@@ -24,7 +26,11 @@ export class WeatherController {
   @HttpCode(HttpStatus.OK)
   @Get()
   @UsePipes(new ValidationPipe())
-  getWeather(@Body() weatherDto: PostWeatherDto) {
-    return this.weatherService.getWeather(weatherDto);
+  getWeather(
+    @Query('lat', ParseIntPipe) lat: number,
+    @Query('lon', ParseIntPipe) lon: number,
+    @Query('part') part?: string,
+  ) {
+    return this.weatherService.getWeather({ lat, lon, part });
   }
 }

@@ -20,10 +20,11 @@ export class PostWeatherDto {
   @Min(-180, { message: 'Longitude must be greater than or equal to -180' })
   @Max(180, { message: 'Longitude must be less than or equal to 180' })
   readonly lon: number;
+
   @IsOptional()
   @IsString({ message: 'Part must be a string' })
   @IsIn(['current', 'minutely', 'hourly', 'daily', 'alerts'], {
     message: 'Invalid part value',
   })
-  readonly part?: string;
+  readonly part?: string = 'current';
 }
