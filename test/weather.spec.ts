@@ -33,7 +33,6 @@ describe('WeatherService', () => {
       },
     };
 
-    await prismaService.weather.deleteMany();
     await prismaService.weather.create({ data: fixture });
   });
 
