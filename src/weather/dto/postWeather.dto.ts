@@ -26,5 +26,5 @@ export class PostWeatherDto {
   @IsIn(['current', 'minutely', 'hourly', 'daily', 'alerts'], {
     message: 'Invalid part value',
   })
-  readonly part?: string = 'current';
+  readonly part?: string;
 }
