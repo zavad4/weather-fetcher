@@ -1,5 +1,5 @@
 import config from 'src/config';
-import HttpClient from './HttpClient';
+import HttpClient from './httpClient';
 import { PostWeatherDto } from 'src/weather/dto/postWeather.dto';
 
 const baseURL = config.baseUrl;
