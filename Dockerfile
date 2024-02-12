@@ -15,4 +15,4 @@ COPY --from=build /app/prisma /app/prisma
 COPY package*.json ./
 COPY tsconfig.json ./
 
-CMD ["sh", "-c", "npm run migrate && npm run start:prod"]
+CMD ["sh", "-c", "npm run migrate  --schema ./prisma/schema.dev.prisma && npm run start:prod"]
