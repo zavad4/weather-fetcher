@@ -8,9 +8,8 @@
   "scripts": {
     "start": "NODE_ENV=development nest start",
     "start-test": "prisma generate --schema ./prisma/schema.test.prisma && prisma migrate dev --schema ./prisma/schema.test.prisma --name init && nest start",
-    "test-setup": "prisma generate --schema ./prisma/schema.test.prisma && prisma migrate dev --schema ./prisma/schema.test.prisma --name init",
+    "test-setup": "prisma migrate dev --schema ./prisma/schema.test.prisma --name init",
     "test": "npm run test-setup && jest",
-    "test2": "jest",
     "migrate": "prisma migrate dev --schema ./prisma/schema.dev.prisma",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
