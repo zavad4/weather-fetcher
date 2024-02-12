@@ -1,4 +1,4 @@
-# nest-auth
+# weather-fetcher
 
 ## Run project locally:
 
