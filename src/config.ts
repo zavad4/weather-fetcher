@@ -8,5 +8,5 @@ export default {
   weatherApiBaseUrl:
     process.env.WEATHER_API_BASE_URL ||
     'https://api.openweathermap.org/data/3.0/onecall',
-  apiKey: process.env.API_KEY || 'e1cc56149f626188f4f348d96f239c07',
+  apiKey: process.env.API_KEY,
 };
