@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "7413309c-da25-4a66-95cd-98bb063ea06e",
+		"name": "weather-fetcher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18029184"
+	},
+	"item": [
+		{
+			"name": "post weather",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lat\" : 10,\n    \"lon\" : -19,\n    \"part\": \"minutely\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/weather"
+			},
+			"response": []
+		},
+		{
+			"name": "get weather",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/weather?lat=10&lon=-12",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "10"
+						},
+						{
+							"key": "lon",
+							"value": "-12"
+						},
+						{
+							"key": "part",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API call",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=current&appid=",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"3.0",
+						"onecall"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "33.44"
+						},
+						{
+							"key": "lon",
+							"value": "-94.04"
+						},
+						{
+							"key": "exclude",
+							"value": "current"
+						},
+						{
+							"key": "appid",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		}
+	]
+}
